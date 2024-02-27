@@ -1,0 +1,97 @@
+Week-1:
+Assignment1:
+1.oj-20742
+a=0
+b=1
+c=1
+n=int(input())
+if n ==1:
+    print(1)
+else:
+    while n >2:
+        a,b,c=b,c,a+b+c
+        n-=1
+    print(c)
+2.codeforces_58A
+s=input()
+letters=['h','e','l','l','o']
+for i in range(5):
+    x=s.find(letters[i])
+    if x==-1:
+        print('NO')
+        break
+    elif i==4:
+        print('YES')
+    else:
+        s=s[x+1:]]
+3.codeforces_118A
+s=input()
+s=s.lower()
+letters=['a','e','i','o','u','y']
+t=''
+n=len(s)
+while n >0:
+    if s[0] not in letters:
+        t=t+'.'+s[0]
+    n-=1
+    s=s[1:]
+print(t)
+4.oj-22359
+s=int(input())
+c=True
+for a in range(2,s+1):
+    if c:
+        b=s-a
+        d=True
+        for i in range(2,s+1):
+            if d:
+                if a%i == 0 and a > i:
+                    d=False
+                elif b%i == 0 and b > i:
+                    d=False
+                if i == s:
+                    c=False
+    else:
+        print(a-1,s+1-a)
+        break
+5.oj-23563
+s=input()
+net=s.split('+')
+c=0
+for a in net:
+    if a[0]=='0':
+        net.remove(a)
+for a in net:
+    b=a.split('^')
+    d=int(b[1])
+    if d > c:
+        c=d
+t='n^'+str(c)
+print(t)
+6.oj-24684
+net=input().split(' ')
+l=len(net)
+s=0
+p=[]
+m=[]
+n=len(m)
+for j in range(l):
+    if net[j] not in m:
+        m.append(net[j])
+for j in m:
+    t=0
+    for i in net:
+        if i== j:
+            t+=1
+    if t>s:
+        s=t
+        p=[int(j)]
+    elif t==s:
+        p.append(int(j))
+p.sort()
+q=str(p[0])
+k=len(p)
+if k >=2:
+    for t in range(1,k):
+        q=q+' '+str(p[t])
+print(q)
